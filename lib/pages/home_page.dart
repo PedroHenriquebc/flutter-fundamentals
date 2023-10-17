@@ -11,6 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var numeroGerado = 0;
+  var qtdCliques = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +19,30 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text(
           "Meu app",
-          // DEFINE MANUALMENTE O TIPO DA FONTE, TAMANHO, etc.
-          //style: GoogleFonts.pacifico(),
+          //style: GoogleFonts.pacifico(),  // DEFINE MANUALMENTE O TIPO DA FONTE, TAMANHO, etc.
         ),
       ),
-      body: Center(
-          child: Text(
-        numeroGerado.toString(),
-        // DEFINE MANUALMENTE O TIPO DA FONTE, TAMANHO, etc.
-        style: GoogleFonts.acme(fontSize: 30),
-      )),
+      body: Column( // COLUMN È UTILZADO PARA COLOCAR UM COMPONENTE EMBAIXO DE OUTRO
+        mainAxisAlignment: MainAxisAlignment.center, // ALINHAMENTO VERTICAL NO CENTRO
+        children: [
+          Center(
+              child: Text(
+            "Foi clicado $qtdCliques vezes",
+            style: GoogleFonts.acme(fontSize: 30),
+          )),
+          Center(
+              child: Text(
+            "O número gerado foi: $numeroGerado",
+            style: GoogleFonts.acme(fontSize: 30),
+          )),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add_box_outlined),
           onPressed: () {
             setState(() {
-              numeroGerado =
-                  GeradorNumeroAleatorioService.gerarNumAleatorio(1000);
+              qtdCliques = qtdCliques + 1;
+              numeroGerado = GeradorNumeroAleatorioService.gerarNumAleatorio(1000);
             });
           }),
     );
