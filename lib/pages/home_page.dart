@@ -27,6 +27,41 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment:
             MainAxisAlignment.center, // ALINHAMENTO VERTICAL NO CENTRO
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center, //O ALINHAMENTO PRINCIPAL DO ROW É HORIZONTAL
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.red,
+                  child: Text(
+                    "Nome:",
+                    style: GoogleFonts.acme(fontSize: 20),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  color: Colors.blue,
+                  child: Text(
+                    "Pedro Henrique",
+                    style: GoogleFonts.acme(fontSize: 20),
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  color: Colors.green,
+                  child: Text(
+                    "30",
+                    style: GoogleFonts.acme(fontSize: 20),
+                  ),
+                ),
+              ),
+            ],
+          ),
           Center(
               child: Text(
             "Foi clicado $qtdCliques vezes",
@@ -37,32 +72,6 @@ class _HomePageState extends State<HomePage> {
             "O número gerado foi: $numeroGerado",
             style: GoogleFonts.acme(fontSize: 20),
           )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center, //O ALINHAMENTO PRINCIPAL DO ROW É HORIZONTAL
-            children: [
-              Container(
-                color: Colors.red,
-                child: Text(
-                  "10",
-                  style: GoogleFonts.acme(fontSize: 20),
-                ),
-              ),
-              Container(
-                color: Colors.blue,
-                child: Text(
-                  "20",
-                  style: GoogleFonts.acme(fontSize: 20),
-                ),
-              ),
-              Container(
-                color: Colors.green,
-                child: Text(
-                  "30",
-                  style: GoogleFonts.acme(fontSize: 20),
-                ),
-              ),
-            ],
-          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
