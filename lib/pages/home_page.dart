@@ -22,19 +22,47 @@ class _HomePageState extends State<HomePage> {
           //style: GoogleFonts.pacifico(),  // DEFINE MANUALMENTE O TIPO DA FONTE, TAMANHO, etc.
         ),
       ),
-      body: Column( // COLUMN È UTILZADO PARA COLOCAR UM COMPONENTE EMBAIXO DE OUTRO
-        mainAxisAlignment: MainAxisAlignment.center, // ALINHAMENTO VERTICAL NO CENTRO
+      body: Column(
+        // COLUMN È UTILZADO PARA COLOCAR UM COMPONENTE EMBAIXO DE OUTRO
+        mainAxisAlignment:
+            MainAxisAlignment.center, // ALINHAMENTO VERTICAL NO CENTRO
         children: [
           Center(
               child: Text(
             "Foi clicado $qtdCliques vezes",
-            style: GoogleFonts.acme(fontSize: 30),
+            style: GoogleFonts.acme(fontSize: 20),
           )),
           Center(
               child: Text(
             "O número gerado foi: $numeroGerado",
-            style: GoogleFonts.acme(fontSize: 30),
+            style: GoogleFonts.acme(fontSize: 20),
           )),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center, //O ALINHAMENTO PRINCIPAL DO ROW É HORIZONTAL
+            children: [
+              Container(
+                color: Colors.red,
+                child: Text(
+                  "10",
+                  style: GoogleFonts.acme(fontSize: 20),
+                ),
+              ),
+              Container(
+                color: Colors.blue,
+                child: Text(
+                  "20",
+                  style: GoogleFonts.acme(fontSize: 20),
+                ),
+              ),
+              Container(
+                color: Colors.green,
+                child: Text(
+                  "30",
+                  style: GoogleFonts.acme(fontSize: 20),
+                ),
+              ),
+            ],
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -42,7 +70,8 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             setState(() {
               qtdCliques = qtdCliques + 1;
-              numeroGerado = GeradorNumeroAleatorioService.gerarNumAleatorio(1000);
+              numeroGerado =
+                  GeradorNumeroAleatorioService.gerarNumAleatorio(1000);
             });
           }),
     );
