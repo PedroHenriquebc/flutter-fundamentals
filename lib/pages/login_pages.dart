@@ -12,7 +12,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: const Color.fromARGB(255, 152, 173, 184),
         body: SizedBox(
           width: double.infinity,
           child: Column(
@@ -21,32 +21,58 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 70,
               ),
-              Container(
-                width: 150,
-                height: 150,
-                color: Colors.amber,
+              const Icon(
+                Icons.person,
+                size: 150,
+                color: Colors.deepPurpleAccent,
               ),
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
+              Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                height: 30,
+                alignment: Alignment.center,
+                child: const Row(
+                  children: [
+                    Expanded(flex: 2, child: Text("Informe seu email:")),
+                    Expanded(flex: 3, child: Text("Email")),
+                  ],
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                margin: const EdgeInsets.symmetric(horizontal: 30),
+                height: 30,
+                alignment: Alignment.center,
+                child: const Row(
+                  children: [
+                    Expanded(flex: 2, child: Text("Informe sua senha:")),
+                    Expanded(flex: 3, child: Text("Senha"))
+                  ],
+                ),
+              ),
+              Expanded(child: Container()),
               Container(
                 width: double.infinity,
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 color: Colors.green,
                 height: 30,
                 alignment: Alignment.center,
-                child: const Text("Informe seu email:"),
+                child: const Text("Login"),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Container(
-                width: double.infinity,
                 margin: const EdgeInsets.symmetric(horizontal: 30),
-                color: Colors.green,
                 height: 30,
                 alignment: Alignment.center,
-                child: const Text("Informe sua senha:"),
+                child: const Text("Cadastro"),
+              ),
+              const SizedBox(
+                height: 20,
               )
             ],
           ),

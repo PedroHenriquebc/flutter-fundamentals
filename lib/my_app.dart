@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.amber,
-        textTheme: GoogleFonts.pacificoTextTheme(),
+        textTheme: GoogleFonts.pacificoTextTheme(),  
       ),
       home: const LoginPage(),
     );
